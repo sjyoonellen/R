@@ -1,0 +1,10 @@
+그래프 그리기
+ggplot(data, aes(x=, y=))+geom_bar(stat="identity", position="dodge", colour="blue")+ geom_text(aes(label= ),vjust=-0.3)
+
+빈도수, 비율 계산
+data2 <- df_data.1  %>% mutate(round(percent*100,2))
+data2=rename(data2, "퍼센트"="round(percent * 100, 2)")
+ggplot(data2, aes(x=응답, y=퍼센트))+geom_bar(stat="identity", position="dodge", colour="blue")+ geom_text(aes(label=퍼센트 ),vjust=-0.3)
+
+엑셀로 다운로드 하려면
+writexl::write_xlsx(data2, path=".xlsx")
