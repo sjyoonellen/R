@@ -1,0 +1,17 @@
+subsetting
+
+x=list(foo=1:4, bar=0.6)
+x$foo
+x[[1]]
+
+x$bar
+x[[2]]
+
+
+subsetting2
+x=c("a", "b", "c", "d")
+x[1:4]
+x[x>"a"]
+
+
+c=data.frame(foo=1:4, bar=c(T,T,F,F))
