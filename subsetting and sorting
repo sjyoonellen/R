@@ -1,0 +1,23 @@
+차례대로 정렬
+sort(x$var1)
+
+큰 수부터 차례대로 정렬
+sort(x$var1, decreasing=TRUE)
+
+널값을 뒤로 밀어넣기
+sort(x$var2, na.last=TRUE)
+
+var1컬럼 값을 기준으로 배열
+x[order(x$var1),]
+
+var1컬럼 값을 기준으로 먼저 배열, 그 후에 var3 컬럼을 기준으로 배열
+x[order(x$var1, x$var3),]
+
+adding rows and columns
+x$var4=rnorm(5)  (컬럼4가 추가됨)
+
+
+adding rows and columns2
+y=cbind(x, rnorm(5))
+
+rbind는 로우
