@@ -1,0 +1,4 @@
+mergddata=merge(reviews, solutions, by.x="solution_id", by.y="id", all=TRUE)
+
+by.x와 by.y를 기준으로 합친다.
+all=TRUE는 한 쪽에 포함되지 않은 것 까지 표시하고 널 값으로 표현하라는 뜻
