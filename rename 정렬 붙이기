@@ -1,0 +1,25 @@
+rename
+names(my_data)[names(my_data)=="sepal_lenth"]<- "sepal_length"
+
+오름차순 정렬
+datasample %>% arrange(AAA)
+
+내림차순 정렬
+datasample %>% arrange(desc(AAA))
+
+여러개 정렬
+datasample %>% arrange(AAA, BBB)
+
+
+붙이기
+paste0('a', 'b', 'c', 'd','e')
+-> "abcde"
+
+change column names
+colnames(Input)[Colnames(Input)=="FABInDemand"]<- "FABInDemand"
+
+Replace NAN with 0
+Input$"FABInDemand"[is.nan(Input$"FABInDemand")]<-0
+
+set time parameter
+FirstMonth=Date[1,"Time.month"]
