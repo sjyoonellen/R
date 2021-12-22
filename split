@@ -1,0 +1,20 @@
+cameraData<- read.csv("./data/camera.csv")
+names(cameraData)
+
+
+소문자로
+tolower(names(cameraData))
+
+.으로 된 것 나누기
+a=strsplit(names(cameraData), "\\.")
+
+gsub("_", '''', testName)
+-> _다 지워짐
+
+
+
+d2=sys.date()
+class(d2)
+-> date
+format(d2, "%a %b %d")
+-> sun jan 12
