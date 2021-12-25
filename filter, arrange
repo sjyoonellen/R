@@ -1,0 +1,11 @@
+library(dplyr)
+
+exam %>% filter(math>=50)
+
+
+exam %>% filter(class=3 & math>=50)
+
+
+exam %>% arrange(english)
+exam %>% arrange(desc(english))
+exam %>% arrange(math, desc(english))
