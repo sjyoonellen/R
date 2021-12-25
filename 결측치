@@ -1,0 +1,5 @@
+#30 넘으면 결측치로 변환
+exam$age<- ifelse(exam$age>=30, NA, exam$age)
+
+#결측치 제외한 나머지 데이터들 연산
+mean(exam$age, na.rm=TRUE)
