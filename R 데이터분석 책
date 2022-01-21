@@ -1,0 +1,36 @@
+Audi %>%
+ filter(year > 2016) %>%
+select (tax, mpg, enginesize) %>%
+colmeans()
+
+변수추가- mutate()
+
+Audi2=Audi %>%
+mutate(tax2=ifelse(tax>100, 1,0),
+engineSize2=round(engineSize))
+
+그룹 간 비율 계산
+Audi6=Audi %>%
+group_by(transmission, year) %>%
+summarise (Count=n(),
+Price_Mean=mean(price)) %>%
+mutate(Perc=Count/sum(count))
+
+Audi7=Audi %>%
+ arrange(price)
+
+내림차순
+Audi8=Audi %>%
+ arrange(-price)
+
+Audi10=Audi %>%
+filter(year>2016 & transmission=="Manual")
+
+문자열 대체
+gsub(x=T1, pattern="A", replacement=3) 
+
+all=TRUE
+두 데이터셋에 존재하는 모든 행을 보존
+
+all.x=TRUE
+merge()에서 앞에 입력되는 데이터 보존.
