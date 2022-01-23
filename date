@@ -1,0 +1,27 @@
+str<- "981214"
+year<-substr(str,1,2)
+month<-substr(str,3,4)
+day<-substr(str,5,6)
+data1<-paste(year, "년", month, "월", day", "일)
+
+s_date<- "2021-5-20"
+first_date<- as.Date(s_date)
+date_1000<-first_date+1000
+s_date_1000<- as.character(date_1000, format="%Y년 %m월 %d일")
+print(s_date_1000)
+
+library(lubridate)
+hiredDate<-ymd("20150302")
+today<-sys.Date()
+diffDate<-interval(hiredDate, today)
+diffDays<- as.period(diffDate, unit="days"
+diffMonths<-as.period(diffDAte, unit="months")
+diffYears<-as.period(diffDate, unit="years)
+print(diffDays)
+print(diffMonths)
+print(diffYears)
+
+sumValue<-apply(score1[c(2:4)],1,sum)
+1-행 2-열
+
+avgValue<-apply(score1[,c(3:5)],1,mean)
