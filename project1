@@ -1,0 +1,20 @@
+colnames(Fact_Input)[colnames(Fact_Input)=="Input"]<-"INPUT"
+
+Fact_Input$"INPUT"[is.na(Fact_Input$"INPUT")]<-0
+
+Date<-subset(Fact_Date, select=c("Time.[Month]", "StartDate", "EndDate"))
+MainTable<- merge(x=Fact_Input, y=Date, by="Time.[Month]")
+
+library(lubridate)
+MainTable$'Time.[Month]'=paste0(MainTable$'Time.[Month]', "01")
+MainTable$'Time.[Month]'=as.Date.character(MainTable$'Time.[Month]', "%Y%m%d")
+
+t1<-seq(from=0, to=nrow(MainTable), by=6)
+t2<-seq(from=1, to=nrow(MainTable), by=6)
+ref<-data.frame(from=t2, to=t1[-1])
+tmp<-c()
+for (i in 1:nrow(ref){
+tmp2<-rbind(MainTable[ref[i, "from"]:ref[i, "to"],],data1, data2,data3,data4)
+tmp<-rbind(tmp, tmp2)}
+
+TempTable$StartDate=as.Date(TempTable$STartDAte, format="%m%d%Y %H:%M:%S")
