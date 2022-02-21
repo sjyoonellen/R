@@ -1,0 +1,31 @@
+library(lubridate)
+library(dplyr)
+library(plyr)
+
+data<-data %>% arrange ('A', 'B', 'C')
+data$tempdate<-paste0(data$tempdate, "01")
+data$tempdate<-as.Date(data$tempdate, format="%Y%m%d")
+
+#매월 있는 days개수
+data$daysinmonth<-lubridate::days_in_month(data$tempdate)
+
+#숫자가 한 자리인 숫자 앞에 0 붙이기
+data$tempday<-formatC(data$tempday, width=2, flag="0")
+
+#매월 아래 days 행 추가 (각 항목별로)
+data2<-do.call("rbind", lapply(1:nrow(data), function(i)
+   data.frame(Date=seq(data$'Time.Month'[i], lubridate::ceiling_date(data$'Time.Month'[i], "month")-1, by="1 days"),
+   value=data$'~'[i],version=data$'Version.Version Name'[i])))
+   
+#round up to 4th decimal digit
+data5$A<-plyr::round_any(data$division, 0.0001, f=ceiling)
+
+b=nrow(data5)-1
+for (i in 1:b){if (data5[i,9]==data5[i+1,9] && data5[i,8]!=data5[i+1,8]){data5$D[i]=1}}
+
+data5$CC<-ifelse(data5$DD==0, data5$EE, data5$FF)
+
+data5<-subset(data5, select=c('A', 'B','D')
+
+#플러그인
+colnames(data5)[colnames(data5)=='A']="Measure.[D CM Artificial]"
