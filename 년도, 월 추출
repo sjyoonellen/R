@@ -1,0 +1,7 @@
+library(dplyr)
+
+colnames(data)[colnames(data)=="Time.Year"]<-"Year"
+data$YY=substr(data$Year,3,4)
+
+colnames(data)[colnames(data)=="Year"]<-"Time.Year"
+colnames(data)[colnames(data)=="YY"]<-"Measure.[YY]"
